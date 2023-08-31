@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if和v-show</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <p v-if="isShow">新增类型:v-if</p>
+        <p v-show="isShow">新增类型:v-show</p>
+        <input type="button" value="切换状态-isShow" @click="changeIsShow">
+    </div>
+</body>
+<script>
+    var app = new Vue({
+            el: "#app",
+            data:{
+                isShow: true,//默认值为true
+            },
+            methods: {//定义方法
+                changeIsShow:function(){//修改isShow的值
+                    this.isShow = !this.isShow;
+                },
+           
+            },
+        })
+</script>
+</html>
