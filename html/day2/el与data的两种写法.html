@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>hello,{{name}}</h1>
+    </div>
+</body>
+
+<script>
+
+    Vue.config.productionTip = false
+
+    //el 两种写法
+    /*
+    Vue.config.productionTip = false
+    const v = new Vue({
+        //el 第一种写法
+        //el:"#root",
+        data:{
+            name:"百度456"
+        }
+    })
+    console.log(v)
+    //el 第二种写法
+    //设置定时器，一秒钟再绑定
+    setTimeout(()=>{
+        v.$mount('#root')
+    },1000);
+    */
+
+    //data两种写法
+    const v = new Vue({
+
+        el: "#root",
+        //data第一种写法 对象式
+        // data:{
+        //     name:"百度456"
+        // }
+
+
+        //data 第二种写法 函数式
+        data: function () {
+            console.log("@@@", this) //this 是vue 实例对象
+            return {
+                name: 'baidu test'
+            }
+        }
+    })
+
+</script>
+
+</html>

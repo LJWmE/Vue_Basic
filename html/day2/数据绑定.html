@@ -12,7 +12,13 @@
     <div id="root">
         单项数据绑定:<input type="text" v-bind:value="name"><br/>
         <!-- v-model只能应用在表单类元素上 -->
-        双向数据绑定:<input type="text" v-model:value="name">
+        双向数据绑定:<input type="text" v-model:value="name"><br/>
+
+        <!-- 简写 -->
+        单项数据绑定:<input type="text" :value="name"><br/>
+        双向数据绑定:<input type="text" v-model="name">
+
+
     </div>
     
 </body>
